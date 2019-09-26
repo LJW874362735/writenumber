@@ -1,9 +1,11 @@
 package com.example.writenumber;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class SelectActivity extends Activity {
 
@@ -56,4 +58,11 @@ public class SelectActivity extends Activity {
 
         }
     }
+
+    /*各个图片的点击事件 */
+    public void OnOne(View view){
+        //当前界面跳转到数字1的书写界面
+        startActivity(new Intent(SelectActivity.this,OneActivity.class));
+    }
+
 }

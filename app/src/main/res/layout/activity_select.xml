@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".SelectActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <!--显示数字1-3的图片-->
+    <TableRow android:layout_weight="1">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/on1_24_1"
+            android:onClick="OnOne"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/on2_24"
+            android:onClick="OnTwo"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/on3_24"
+            android:onClick="OnThree"
+            />
+    </TableRow>
+
+    <!--显示数字4-6的图片-->
+    <TableRow android:layout_weight="1">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/on4_24"
+            android:onClick="OnFour"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/on5_24"
+            android:onClick="OnFive"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/on6_24"
+            android:onClick="OnSix"
+            />
+    </TableRow>
+
+    <!--显示数字7-9的图片-->
+    <TableRow android:layout_weight="1">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/on7_24"
+            android:onClick="OnSeven"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/on8_24"
+            android:onClick="OnEight"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/on9_24"
+            android:onClick="OnNine"
+            />
+    </TableRow>
+
+    <!--显示数字0的图片-->
+    <TableRow android:layout_weight="1">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/on0_24"
+            android:onClick="OnZero"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            />
+    </TableRow>
+
+
+</TableLayout>

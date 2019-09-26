@@ -50,13 +50,13 @@ public class MainActivity extends Activity {
                 mediaPlayer.stop();     //停止播放
                 //更改按钮背景
                 music_btn.setBackgroundResource(R.drawable.btn_music2);
-                isPlay=false;           //更改播放状态
+                isPlay=false;           //更改播放状态，静音
             }
         }else {
             PlayMusic();
             //更改annuity背景
             music_btn.setBackgroundResource(R.drawable.btn_music1);
-            isPlay=true;                //更改播放状态
+            isPlay=true;                //更改播放状态，不是静音
         }
     }
 

@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -88,6 +89,7 @@ public class OneActivity extends Activity {
             public boolean onTouch(View view, MotionEvent motionEvent) {    //触摸事件的回调
                 switch (motionEvent.getAction()){
                     case MotionEvent.ACTION_DOWN:       //手指按下那一刻
+                        Toast.makeText(OneActivity.this,"按下了",Toast.LENGTH_SHORT);
                         x1=motionEvent.getX();          //手指按下的坐标
                         y1=motionEvent.getY();
                         igvx=iv_frame.getLeft();        //手指按下图片的坐标
@@ -206,7 +208,7 @@ public class OneActivity extends Activity {
                             public void run() {
                                 new Thread(new Runnable() { //开启子线程，异步消息
                                     @Override
-                                    public void run() {
+                                    public void run() {     //异步消息机制，子线程发送消息
                                         Message message=new Message();
                                         message.what=2; //消息为2
                                         mHandler.sendMessage(message);//发送消息
@@ -221,16 +223,43 @@ public class OneActivity extends Activity {
         });
     }
 
+    //主线程，处理消息
     public Handler mHandler =new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            super.handleMessage(msg);
+
             switch (msg.what){
                 case 2:
-                    
+                    jloadimage();   //手势抬起时，倒退图片资源文件
+                    break;
+
             }
+            super.handleMessage(msg);
         }
     };
+
+    //手势抬起时，倒退图片资源文件
+    private void jloadimage() {
+        if (i==25){
+
+        }else if (i<25){        //当前图片小于25
+            if (i>1){
+                i--;
+            }else if (i==1){
+                i=1;
+                if (touchTimer!=null){
+                    touchTimer.cancel();    //中断倒计时
+                    touchTimer=null;
+                }
+            }
+
+        }
+        String name="on1_"+i;               //图片名称
+        //获取图片资源
+        int imgid=getResources().getIdentifier(name,"drawable","com.example.writenumber");
+        //给ImageView设置图片
+        iv_frame.setBackgroundResource(imgid);
+    }
 
     //显示书写数字的第一张图片，并且实现手势移动时加载不同的图片
     private synchronized void loadImage(int j){
